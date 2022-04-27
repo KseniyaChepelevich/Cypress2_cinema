@@ -1,0 +1,17 @@
+{
+  "name": "cypress_2_cinema",
+  "version": "1.0.0",
+  "description": "cinema site testing with cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "KChepelevich",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.7.0"
+  }
+}
