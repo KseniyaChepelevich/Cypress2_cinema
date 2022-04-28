@@ -24,10 +24,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (email, password) => {
-    //cy.contains('Log in').click();
-    cy.get('[name="email"]').type(email);
-    cy.get('[name="password"]').type(password);
-    cy.contains('Авторизоваться').click();
+const authorization = require("../fixtures/authorization_page.json")
 
+Cypress.Commands.add("login", (email, password) => {
+    //cy.contains('Log in').click();
+    cy.get(authorization.email).type(email);
+    cy.get(authorization.password).type(password);
+    cy.contains("Авторизоваться").click();
 });

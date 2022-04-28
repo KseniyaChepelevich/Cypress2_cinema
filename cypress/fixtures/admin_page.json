@@ -1,0 +1,7 @@
+{
+    "newHall": "[data-hall-name='Experimental Hall']",
+    "deletNewHall": "form > .conf-step__buttons > .conf-step__button-accent",
+    "newHallNameInput": "form > .conf-step__label > .conf-step__input",
+    "hallList": ".conf-step__list",
+    "salesHall6": "#start-sales .conf-step__selectors-box > :nth-child(6) > .conf-step__radio"
+}

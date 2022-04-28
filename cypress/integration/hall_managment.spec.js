@@ -1,25 +1,25 @@
+const adminPage = require("../fixtures/admin_page.json");
+const loginData = require("../fixtures/login_data.json");
+const authorization = require("../fixtures/authorization_page.json");
+
 after("AfterAll", function () {
     cy.visit("http://qamid.tmweb.ru/admin");
-    //cy.contains("Experimental Hall").children("button").click();
-    cy.get('[data-hall-name="Experimental Hall"]');
-    /*if (cy.get('.popup__dismiss > img'))
-        cy.get('.popup__dismiss > img').click();*/
-    cy.get('[data-hall-name="Experimental Hall"]').click();
 
+    cy.get(adminPage.newHall);
 
-    cy.contains('Удаление зала');
-    cy.get('form > .conf-step__buttons > .conf-step__button-accent').click();
+    cy.get(adminPage.newHall).click();
 
-})
+    cy.contains("Удаление зала");
+    cy.get(adminPage.deletNewHall).click();
+});
 
 it("Should be able to add a new hall", () => {
     cy.visit("http://qamid.tmweb.ru/admin");
-    cy.login("qamid@qamid.ru", "qamid");
-    cy.contains('Создать зал').click();
-    cy.contains('Добавление зала');
-    cy.get('form > .conf-step__label > .conf-step__input').type("Experimental Hall");
-    cy.contains('Добавить зал').click();
-    //cy.contains('experimental hall').should("be.visible");
-    cy.get('.conf-step__list').contains("Experimental Hall").should("be.visible");
+    cy.login(loginData.validEmail, loginData.validPassword);
+    cy.contains("Создать зал").click();
+    cy.contains("Добавление зала");
+    cy.get(adminPage.newHallNameInput).type("Experimental Hall");
+    cy.contains("Добавить зал").click();
 
+    cy.get(adminPage.hallList).contains("Experimental Hall").should("be.visible");
 });

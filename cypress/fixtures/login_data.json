@@ -1,5 +1,8 @@
 {
-    "name": "Using fixtures to represent data",
-    "email": "hello@cypress.io"
+    "validEmail": "qamid@qamid.ru",
+    "validPassword": "qamid",
     
-  }
+ 
+    "invalidEmail": "qamib@qamid.ru",
+    "invalidPassword": "1234"
+}  
