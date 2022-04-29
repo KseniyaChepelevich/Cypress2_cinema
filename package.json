@@ -4,7 +4,7 @@
   "description": "cinema site testing with cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:dash": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7"
   },
   "keywords": [
     "cypress"
