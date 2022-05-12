@@ -5,7 +5,7 @@ const authorization = require("../fixtures/authorization_page.json");
 after("AfterAll", function () {
     cy.visit("http://qamid.tmweb.ru/admin");
 
-    cy.get(adminPage.newHall);
+
 
     cy.get(adminPage.newHall).click();
 
