@@ -4,5 +4,5 @@
     "newHallNameInput": "form > .conf-step__label > .conf-step__input",
     "hallList": ".conf-step__list",
     "salesHall6": "#start-sales .conf-step__selectors-box > :nth-child(6) > .conf-step__radio",
-    "hallForTest": ".conf-step__list > :nth-child(3)"
+    "hallForTest": "#hall-configuration > .conf-step__wrapper > .conf-step__selectors-box > :nth-child(3) > .conf-step__radio"
 }

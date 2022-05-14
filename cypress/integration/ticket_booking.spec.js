@@ -10,25 +10,29 @@ it("Should be able to booking ticket", () => {
     cy.get(adminPage.hallForTest)
 
         .invoke("val")
-        .then((hallName) => {
-            return hallName;
-        });
+        .then(($hallForTest) => {
+            const hallName = $hallForTest.text();
+            cy.visit("http://qamid.tmweb.ru");
+            cy.get(mainPage["fourthDay"]).click();
+            //Вместо названия зала нужно подставить переменную
+            cy.get(mainPage.sectionMovie)
+                .contains(hallName)
+                .siblings(mainPage.seancesList)
+                .children()
+                .children()
+                .click();
+            const seats = require("../fixtures/seats.json");
+            seats.forEach((seat) => {
+                cy.get(
+                    `.buying-scheme__wrapper > :nth-child(${seat.row}) > :nth-child(${seat.seat})`
+                ).click();
+            });
+            /*cy.get(adminPage.hallForTest).should(($adminPage.hallForTest) => {
+                const hallName = $adminPage.hallForTest.text()
+            })*/
 
-    cy.visit("http://qamid.tmweb.ru");
-    cy.get(mainPage["fourthDay"]).click();
-    //Вместо названия зала нужно подставить переменную
-    cy.get(mainPage.sectionMovie)
-        .contains("Зал 1")
-        .siblings(mainPage.seancesList)
-        .children()
-        .children()
-        .click();
-    const seats = require("../fixtures/seats.json");
-    seats.forEach((seat) => {
-        cy.get(
-            `.buying-scheme__wrapper > :nth-child(${seat.row}) > :nth-child(${seat.seat})`
-        ).click();
-    });
+
+        });
     const hallPage = require("../fixtures/hall_page.json");
     cy.get(hallPage.bookButton).click();
     cy.contains("Вы выбрали билеты:").should("be.visible");
