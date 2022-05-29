@@ -32,3 +32,9 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get(authorization.password).type(password);
     cy.contains("Авторизоваться").click();
 });
+
+Cypress.Commands.add("text", {
+    prevSubject: true
+}, (subject, options) => {
+    return subject.text();
+});
