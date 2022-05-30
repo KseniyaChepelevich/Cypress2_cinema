@@ -1,5 +1,5 @@
-const loginData = require("../fixtures/login_data.json");
-const authorization = require("../fixtures/authorization_page.json");
+const loginData = require("../../fixtures/login_data.json");
+const authorization = require("../../fixtures/authorization_page.json");
 
 describe("Admin login", () => {
     it("Should be able to admin login with correct email and password", () => {

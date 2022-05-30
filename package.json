@@ -4,7 +4,13 @@
   "description": "cinema site testing with cypress",
   "main": "index.js",
   "scripts": {
-    "cy:dash": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7"
+    "cy:dash": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7",
+    "cy:hallManagment": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/spec2/hallManagment.spec.js'",
+    "cy:login": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/spec1/login.spec.js'",
+    "cy:mainPpage": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/spec1/mainPage.spec.js'",
+    "cy:ticketBooking": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/spec2/ticketBooking.spec.js'",
+    "cy:parallel": "npm run cy:hallManagment --browser chrome --group hallManagment --ci-build-id 1 & npm run cy:login --browser electron --group login --ci-build-id 1 & npm run cy:mainPpage --browser chrome --group mainPage --ci-build-id 1 & npm run cy:ticketBooking --browser electron --group ticketBooking --ci-build-id 1"
+
   },
   "keywords": [
     "cypress"
