@@ -8,7 +8,7 @@
     "cy:hallManagment": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/adminPage/hallManagment.spec.js'",
     "cy:login": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/login/login.spec.js'",
     "cy:mainPpage": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/links/mainPage.spec.js'",
-    "cy:ticketBooking": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/ticketBooking.spec.js'",
+    "cy:ticketBooking": "cypress run --record --key b9548617-6716-422d-820a-d1c6bf418df7 --spec 'cypress/integration/tickets/ticketBooking.spec.js'",
     "cy:parallel": "npm run cy:hallManagment --browser chrome --group first & npm run cy:login --browser electron --group second",
     "cy:run:chrome": "cypress run --record --browser chrome --key b9548617-6716-422d-820a-d1c6bf418df7",
     "cy:run:firefox": "cypress run --record --browser firefox --key b9548617-6716-422d-820a-d1c6bf418df7",
