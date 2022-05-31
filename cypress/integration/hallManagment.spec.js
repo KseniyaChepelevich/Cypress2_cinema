@@ -1,6 +1,6 @@
-const adminPage = require("../../fixtures/admin_page.json");
-const loginData = require("../../fixtures/login_data.json");
-const authorization = require("../../fixtures/authorization_page.json");
+const adminPage = require("../fixtures/admin_page.json");
+const loginData = require("../fixtures/login_data.json");
+const authorization = require("../fixtures/authorization_page.json");
 
 after("AfterAll", function () {
     cy.visit("http://qamid.tmweb.ru/admin");

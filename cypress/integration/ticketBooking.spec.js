@@ -1,5 +1,5 @@
-const loginData = require("../../fixtures/login_data.json");
-const mainPage = require("../../fixtures/main_page.json");
+const loginData = require("../fixtures/login_data.json");
+const mainPage = require("../fixtures/main_page.json");
 
 it("Should be able to booking ticket", () => {
     cy.visit("http://qamid.tmweb.ru/admin");
@@ -20,7 +20,7 @@ it("Should be able to booking ticket", () => {
                 .children()
                 .click();
         });
-    const seats = require("../../fixtures/seats.json");
+    const seats = require("../fixtures/seats.json");
     seats.forEach((seat) => {
         cy.get(
             `.buying-scheme__wrapper > :nth-child(${seat.row}) > :nth-child(${seat.seat})`
@@ -28,7 +28,7 @@ it("Should be able to booking ticket", () => {
     });
 
 
-    const hallPage = require("../../fixtures/hall_page.json");
+    const hallPage = require("../fixtures/hall_page.json");
     cy.get(hallPage.bookButton).click();
     cy.contains("Вы выбрали билеты:").should("be.visible");
 
