@@ -38,3 +38,4 @@ Cypress.Commands.add("text", {
 }, (subject, options) => {
     return subject.text();
 });
+import 'cypress-file-upload';

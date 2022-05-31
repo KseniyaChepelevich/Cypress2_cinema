@@ -1,4 +1,4 @@
-const mainPage = require("../fixtures/main_page.json")
+const mainPage = require("../../fixtures/main_page.json")
 
 it("Should be able to open the main page", () => {
     cy.visit("http://qamid.tmweb.ru");
